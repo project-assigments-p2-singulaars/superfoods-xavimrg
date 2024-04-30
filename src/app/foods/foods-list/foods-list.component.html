@@ -1,10 +1,28 @@
-<p>foods-list works!</p>
 
-<ul id="flCard">
-    @for (food of foods; track $index) {
-        <h2 id="flTittle">{{food.name}}</h2>
-        <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
-         <p id="flQuantity" >Quantity: {{food.quantity}}</p>
-         <p id="flCalories">Calories: {{food.calories}}</p>
-    }
+<input type="text" placeholder="Search foods" (input)="searchFoods()" [(ngModel)]="inputValue">
+
+<ul>
+@if (filterArray.length > 0)
+{  @for (food of filterArray; track food.name) {
+    <h2 id="flTittle">{{food.name}}</h2>
+    <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
+     <p id="flQuantity">Quantity: {{food.quantity}}</p>
+     <p id="flCalories">Calories: {{food.calories}}</p>
+
+}
+}
+
+@else{
+    
+    
+@for (food of foods; track food.name) {
+    <h2 id="flTittle">{{food.name}}</h2>
+    <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
+     <p id="flQuantity">Quantity: {{food.quantity}}</p>
+     <p id="flCalories">Calories: {{food.calories}}</p>
+}
+
+}
 </ul>
+
+

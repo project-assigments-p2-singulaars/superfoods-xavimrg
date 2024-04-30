@@ -8,6 +8,6 @@ export class FoodsServiceService {
 
   constructor() { }
   getAllFoods() {
- return foods
+    return foods
   }
 }
