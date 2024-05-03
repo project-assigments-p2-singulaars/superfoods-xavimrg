@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Food } from '../../shared/interfaces/food';
 import { foods } from '../../../../foods';
 import { FormsModule } from '@angular/forms';
+import { MenuCounterService } from '../../service/menu.counter.service';
 
 
 @Component({
@@ -17,6 +18,9 @@ inputValue: string = "";
 filterArray:Food[] = [];
 //trackFoods(Index:number, food: Foods)
 //return foods.id;
+
+menuCounterService = inject(MenuCounterService)
+
 ngOnInit(): void {
   
 }
@@ -27,5 +31,7 @@ searchFoods(){
     food.name.toLocaleLowerCase().includes(this.inputValue.toLocaleLowerCase())
 )
 }
-
+addToMenu(food: any){
+  this.menuCounterService.addToMenu(food);
+} // to get rid of the error alert
 }

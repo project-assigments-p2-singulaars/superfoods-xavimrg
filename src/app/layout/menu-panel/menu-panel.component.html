@@ -1,1 +1,5 @@
 <p>menu-panel works!</p>
+@for (menus of menuCounterService.getMenus(); track menus.id) {
+    <p>{{menus.name}} - Calories: {{menus.calories}}</p>
+    <p> 
+}
