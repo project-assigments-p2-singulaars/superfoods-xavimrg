@@ -8,14 +8,16 @@ private menus: any[] = [];
 
   constructor() { }
 
-  addToMenu(food: any){
-    this.menus.push(food)
+  addToMenu(food: any){ // FUNCION AÑADIR AL MENU (CARRITO) definimos food como any
+    this.menus.push(food) // este menu = la comida que meta dentro con el PUSH
   }
 
-getMenus(){
+getMenus(){ // para utilizar en el template de menus (@for (menus of menuCounterService.getMenus(); track menus.id)  )
   return this.menus; 
 }
 
-
+delete(menu: any){
+  this.menus = this.menus.filter((i) => i.id !== menu.id);
+}
 }
 

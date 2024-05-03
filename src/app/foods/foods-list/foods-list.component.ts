@@ -32,6 +32,6 @@ searchFoods(){
 )
 }
 addToMenu(food: any){
-  this.menuCounterService.addToMenu(food);
+  this.menuCounterService.addToMenu(food); // la funcion viene definida en el servicio y aqui la juntamos
 } // to get rid of the error alert
 }

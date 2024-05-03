@@ -13,4 +13,7 @@ export class MenuPanelComponent {
 
   menuCounterService = inject(MenuCounterService)
 
+  deleteFromMenu(menu: any){
+    this.menuCounterService.delete(menu)
+  }
 }
