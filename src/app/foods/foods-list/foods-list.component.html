@@ -8,7 +8,6 @@
 {  @for (food of filterArray; track food.name) {
     <h2 id="flTittle">{{food.name}}</h2>
     <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
-     <p id="flQuantity">Quantity: {{food.quantity}}</p>
      <p id="flCalories">Calories: {{food.calories}}</p>
      <button (click)="addToMenu(food)">Add to Menu</button>
 
@@ -21,7 +20,6 @@
 @for (food of foods; track food.name) {
     <h2 id="flTittle">{{food.name}}</h2>
     <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
-     <p id="flQuantity">Quantity: {{food.quantity}}</p>
      <p id="flCalories">Calories: {{food.calories}}</p>
      <button (click)="addToMenu(food)">Add to Menu</button>
 }

@@ -11,6 +11,8 @@ import { FoodsListComponent } from '../../foods/foods-list/foods-list.component'
 })
 export class MenuPanelComponent {
 
+menu: any;
+
   menuCounterService = inject(MenuCounterService)
 
   deleteFromMenu(menu: any){

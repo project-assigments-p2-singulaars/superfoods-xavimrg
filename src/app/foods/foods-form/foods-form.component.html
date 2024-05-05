@@ -1,8 +1,31 @@
-<form action="New food">
-<label for=""></label>
-<input type="text" placeholder="Food name">
-<input type="text" placeholder="Image url">
-<input type="number" placeholder="Quantity">
-<input type="number" placeholder="Calories">
-<button>Add Food</button>
-</form>
+<!-- <form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="newFood.name" placeholder="Nane">
+    <input type="number" [(ngModel)]="newFood.calories" placeholder="Calories">
+    <input type="text" [(ngModel)]="newFood.image" placeholder="Image">
+    <input type="number" [(ngModel)]="newFood.quantity" placeholder="Quantity">
+    <button type="submit">Add new Food</button>
+  </form>  -->
+
+<form [FormGroup] = "foodForm" (ngSubmit)="onSubmit()">
+    <label>
+      Food name:
+      <input type="text" formControlName="name">
+    </label>
+  
+    <label>
+      Image url:
+      <input type="text" formControlName="imageUrl">
+    </label>
+  
+    <label>
+      Quantity:
+      <input type="number" formControlName="quantity">
+    </label>
+  
+    <label>
+      Calories:
+      <input type="number" formControlName="calories">
+    </label>
+  
+    <button type="submit">Add Food</button>
+  </form> 

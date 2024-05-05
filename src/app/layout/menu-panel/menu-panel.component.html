@@ -2,4 +2,6 @@
 @for (menus of menuCounterService.getMenus(); track menus.id) {
     <p>{{menus.name}} - Calories: {{menus.calories}}</p>
     <button (click)="deleteFromMenu(menus)">Delete from Menu</button>
+    <!--<button (click)="menuCounterService.incrementQuantity(menu.id)">+ hola</button>-->
+
 }
