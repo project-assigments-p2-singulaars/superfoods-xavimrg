@@ -1,0 +1,10 @@
+<p>foods-list works!</p>
+
+<ul id="flCard">
+    @for (food of foods; track $index) {
+        <h2 id="flTittle">{{food.name}}</h2>
+        <img id="flImg" src="{{food.image}}" alt="{{food.name}}">
+         <p id="flQuantity" >Quantity: {{food.quantity}}</p>
+         <p id="flCalories">Calories: {{food.calories}}</p>
+    }
+</ul>
