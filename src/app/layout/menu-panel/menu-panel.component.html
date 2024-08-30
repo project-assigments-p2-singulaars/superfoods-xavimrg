@@ -1,7 +1,8 @@
 <p>menu-panel works!</p>
-@for (menus of menuCounterService.getMenus(); track menus.id) {
-    <p>{{menus.name}} - Calories: {{menus.calories}}</p>
-    <button (click)="deleteFromMenu(menus)">Delete from Menu</button>
-    <!--<button (click)="menuCounterService.incrementQuantity(menu.id)">+ hola</button>-->
 
+@for (menu of menuCounterService.getMenus(); track menu.id) {
+    <p>{{menu.name}} x {{menu.quantity}} -  Calories for each {{menu.name}}: {{menu.calories}}</p>
+    <button (click)="deleteFromMenu(menu)">Delete from Menu</button>
+<!--     <button (click)="menuCounterService.incrementQuantity(menu.id)">+ hola</button> -->
 }
+<p>Total Calories: {{menuCounterService.getTotalCalories()}}</p>

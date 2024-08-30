@@ -18,4 +18,9 @@ menu: any;
   deleteFromMenu(menu: any){
     this.menuCounterService.delete(menu)
   }
+
+  trackByMenuId(index: number, menu: any) {
+    return menu.id;
+  }
+  
 }

@@ -9,7 +9,7 @@ export class FoodsServiceService {
   foods = signal(foods);
   text = signal('');
   filterArray = computed(() =>
-    this.foods().filter((food) => food.name.includes(this.text()))
+    this.foods().filter((food) => food.name.toLocaleLowerCase().includes(this.text()))
   );
 
   addFood(food:Food){

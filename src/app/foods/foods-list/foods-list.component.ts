@@ -14,8 +14,8 @@ import { MenuCounterService } from '../../service/menu.counter.service';
 })
 export class FoodsListComponent implements OnInit {
   foods=input<Food[]>();/* foods:Food[] = foods;  */// transformo foods en un array
-inputValue: string = "";
-filterArray:Food[] = [];
+/* inputValue: string = "";
+filterArray:Food[] = []; */
 //trackFoods(Index:number, food: Foods)
 //return foods.id;
 
@@ -25,12 +25,6 @@ ngOnInit(): void {
   
 }
 
-/* searchFoods(){
-
-  this.filterArray= this.foods.filter((food:Food) =>
-    food.name.toLocaleLowerCase().includes(this.inputValue.toLocaleLowerCase())
-)
-} */
 addToMenu(food: any){
   this.menuCounterService.addToMenu(food); // la funcion viene definida en el servicio y aqui la juntamos
 } // to get rid of the error alert

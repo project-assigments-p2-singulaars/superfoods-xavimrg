@@ -7,8 +7,6 @@ import { Injectable } from '@angular/core';
 })
 export class MenuCounterService {
 
-
-
 private menus: any[] = [];
 
   constructor() { 
@@ -16,23 +14,34 @@ private menus: any[] = [];
   }
 
   addToMenu(food: any) { // FUNCION AÑADIR AL MENU (CARRITO) definimos food como any
-    this.menus.push({...food, quantity: 1}) // este menu = la comida que meta dentro con el PUSH
+    const alreadyOnMenu = this.menus.find((item) => item.id === food.id); // creo una variable donde almaceno si esta en el menu,
+    // en este menu encuentrame (find) el item , itemn.id es igual a food.id 
+    
+    if (alreadyOnMenu) { // entonces sumame una cantidad 
+      alreadyOnMenu.quantity += 1;
+      alreadyOnMenu.totalCalories += food.calories;
+    } else { this.menus.push({...food, quantity: 1, totalCalories: food.calories})}
+    // este menu = la comida que meta dentro con el PUSH
   }
 
 getMenus(){ // para utilizar en el template de menus (@for (menus of menuCounterService.getMenus(); track menus.id)  )
   return this.menus; 
 }
-
+ 
 delete(menu: any){
   this.menus = this.menus.filter((i) => i.id !== menu.id); //  selecciona el elemento si coincide con el id del elemento seleccionado
 }
 
-incrementQuantity(id: number){
+
+getTotalCalories() {
+  return this.menus.reduce((total, menu) => total + (menu.calories * menu.quantity), 0);
+}
+/*  incrementQuantity(id: number){
   let menu:any = this.menus.find((i) => i.id === menu.id);
   if (menu) {
     menu.quantity++;
 } }
-}
+} */
 
 //descreaseQuantity(id: number){
 //  let menu = this.menus.find((i) => i.id !== menu.id);
@@ -48,4 +57,4 @@ incrementQuantity(id: number){
 //}
 
 
-
+}
