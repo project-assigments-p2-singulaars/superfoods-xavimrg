@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject, input } from '@angular/core';
 import { Food } from '../../shared/interfaces/food';
 import { foods } from '../../../../foods';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { MenuCounterService } from '../../service/menu.counter.service';
   styleUrl: './foods-list.component.scss'
 })
 export class FoodsListComponent implements OnInit {
-foods:Food[] = foods; // transformo foods en un array
+  foods=input<Food[]>();/* foods:Food[] = foods;  */// transformo foods en un array
 inputValue: string = "";
 filterArray:Food[] = [];
 //trackFoods(Index:number, food: Foods)
@@ -25,12 +25,12 @@ ngOnInit(): void {
   
 }
 
-searchFoods(){
+/* searchFoods(){
 
   this.filterArray= this.foods.filter((food:Food) =>
     food.name.toLocaleLowerCase().includes(this.inputValue.toLocaleLowerCase())
 )
-}
+} */
 addToMenu(food: any){
   this.menuCounterService.addToMenu(food); // la funcion viene definida en el servicio y aqui la juntamos
 } // to get rid of the error alert

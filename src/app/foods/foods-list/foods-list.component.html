@@ -1,4 +1,16 @@
+<ul>
+    @for(food of foods(); track food.id){
+      <li>
+        <p>{{food.name}}</p>
+        <img src="{{food.image}}" alt="{{food.name}}">
+        <button (click)="addToMenu(food)">Add food</button>
+      </li>
+  
+    }
+  </ul>
+  
 
+<!-- 
 <input type="text" placeholder="Search foods" (input)="searchFoods()" [(ngModel)]="inputValue">
 <br>
 <button>NEW FOOD FORM</button>
@@ -28,3 +40,4 @@
 </ul>
 
 
+ -->

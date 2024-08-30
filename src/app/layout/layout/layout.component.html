@@ -1,7 +1,7 @@
 <p>layout works!</p>
 <app-header></app-header>
-<section id="layoutContainer">
-    <app-foods-list id="foodList"></app-foods-list>
-<app-menu-panel id="menuPanel"></app-menu-panel>
-</section>
+<app-foods-form [foodForm]="foodForm" (sentForm)="onSubmit($event)"></app-foods-form>
+<app-foods-list [foods]="foods()"></app-foods-list>
+<app-menu-panel></app-menu-panel>
+
 

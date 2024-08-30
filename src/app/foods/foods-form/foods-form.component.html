@@ -1,12 +1,4 @@
-<!-- <form (ngSubmit)="onSubmit()">
-    <input type="text" [(ngModel)]="newFood.name" placeholder="Nane">
-    <input type="number" [(ngModel)]="newFood.calories" placeholder="Calories">
-    <input type="text" [(ngModel)]="newFood.image" placeholder="Image">
-    <input type="number" [(ngModel)]="newFood.quantity" placeholder="Quantity">
-    <button type="submit">Add new Food</button>
-  </form>  -->
-
-<form [FormGroup] = "foodForm" (ngSubmit)="onSubmit()">
+<form [formGroup] = "foodForm" (ngSubmit)="onSubmit()">
     <label>
       Food name:
       <input type="text" formControlName="name">
@@ -14,7 +6,7 @@
   
     <label>
       Image url:
-      <input type="text" formControlName="imageUrl">
+      <input type="text" formControlName="image">
     </label>
   
     <label>
